@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PrayerMemo</string>
+    <string name="add_memo">add memo</string>
+    <string name="get_memo">get memo</string>
 </resources>
