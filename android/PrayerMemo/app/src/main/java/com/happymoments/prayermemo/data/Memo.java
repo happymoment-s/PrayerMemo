@@ -114,4 +114,20 @@ public class Memo extends RealmObject {
     public void setValidity(int validity) {
         this.validity = validity;
     }
+
+    @Override
+    public String toString() {
+        return "Memo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", password=" + password +
+                ", alarmTime='" + alarmTime + '\'' +
+                ", alarmDay=" + alarmDay +
+                ", regDate='" + regDate + '\'' +
+                ", updDate='" + updDate + '\'' +
+                ", createId=" + createId +
+                ", validity=" + validity +
+                '}';
+    }
 }

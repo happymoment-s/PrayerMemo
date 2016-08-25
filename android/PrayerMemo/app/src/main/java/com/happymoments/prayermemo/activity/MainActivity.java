@@ -11,6 +11,8 @@ import com.happymoments.prayermemo.R;
 import com.happymoments.prayermemo.data.Memo;
 import com.happymoments.prayermemo.database.DatabaseManagerByRealm;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText mTitleEditText;
@@ -18,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     Button mAddButton;
     Button mGetButton;
     TextView mMemoListTextView;
-
-    //DatabaseManagerByRealm mDatabaseManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +45,17 @@ public class MainActivity extends AppCompatActivity {
                 Memo memo = new Memo();
                 memo.setTitle(mTitleEditText.getText().toString());
                 memo.setContent(mContentEditText.getText().toString());
-                DatabaseManagerByRealm.addMemo(MainActivity.this, memo);
+                DatabaseManagerByRealm.addMemo(memo);
                 mTitleEditText.setText("");
                 mContentEditText.setText("");
+            }
+        });
+
+        mGetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<Memo> memoList = DatabaseManagerByRealm.getMemoList();
+                mMemoListTextView.setText(memoList.toString());
             }
         });
     }
