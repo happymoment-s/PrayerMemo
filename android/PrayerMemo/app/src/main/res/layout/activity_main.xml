@@ -11,35 +11,4 @@
              android:layout_width="match_parent"
              android:layout_height="@dimen/header_size"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:inputType="text"
-        android:labelFor="@id/editText"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:inputType="text"
-        android:labelFor="@id/editText2"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_memo"
-        android:id="@+id/button"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/get_memo"
-        android:id="@+id/button2"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Small Text"
-        android:id="@+id/textView"/>
 </LinearLayout>
