@@ -3,11 +3,12 @@
               android:layout_width="match_parent"
               android:layout_height="@dimen/header_size"
               android:background="@color/light_gray"
+              android:orientation="horizontal"
               android:paddingLeft="10dp"
-              android:paddingRight="10dp"
-              android:orientation="horizontal">
+              android:paddingRight="10dp">
 
     <LinearLayout
+        android:id="@+id/header_folder_name_linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -32,6 +33,16 @@
             android:src="@mipmap/icon_expand_arrow"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/header_cancel_memo_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/icon_delete"
+        android:visibility="gone"/>
+
 
     <View
         android:layout_width="0dp"
@@ -70,5 +81,25 @@
             android:layout_marginStart="5dp"
             android:scaleType="fitCenter"
             android:src="@mipmap/icon_setting"/>
+
+        <ImageView
+            android:id="@+id/header_save_memo_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_check"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/header_setting_memo_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_present"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>
