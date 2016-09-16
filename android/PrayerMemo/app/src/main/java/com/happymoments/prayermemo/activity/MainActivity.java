@@ -6,9 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.happymoments.prayermemo.R;
+import com.happymoments.prayermemo.adapter.MemoAdapter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public final String TAG = MainActivity.this.getClass().getSimpleName();
@@ -16,7 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView mAddMemoImageView;
     private ImageView mSearchImageView;
     private ImageView mSettingImageView;
-
+    private ListView mMemoListView;
+    private MemoAdapter mMemoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAddMemoImageView = (ImageView) findViewById(R.id.header_add_memo_imageView);
         mSearchImageView = (ImageView) findViewById(R.id.header_search_imageView);
         mSettingImageView = (ImageView) findViewById(R.id.header_setting_imageView);
+        mMemoListView = (ListView) findViewById(R.id.activity_main_memo_listView);
     }
 
     private void initData() {
@@ -40,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAddMemoImageView.setOnClickListener(this);
         mSearchImageView.setOnClickListener(this);
         mSettingImageView.setOnClickListener(this);
+
+        mMemoAdapter = new MemoAdapter(this, null);
+        mMemoListView.setAdapter(mMemoAdapter);
     }
 
     @Override
